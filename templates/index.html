@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Find The Hidden</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<h1>Find The Hidden</h1>
+
+<div id="ui">
+    <div id="question-display">Loading riddle...</div>
+    <div>Items Found: <span id="score">0</span></div>
+    <div id="lives">❤️❤️❤️</div>
+    <button id="restart-btn">Restart</button>
+    <button id="next-level-btn">Next Level</button>
+</div>
+
+<div id="game-container-wrapper">
+    <div id="game-container">
+        <img id="game-image" src="" alt="Game Scene">
+        <div id="hotspot-layer"></div>
+    </div>
+
+    <div id="hint-box">
+        
+        <div style="margin-bottom:5px;">
+            <button id="hint1-btn" class="hint-btn">💡1</button>
+            <button id="hint2-btn" class="hint-btn">💡2</button>
+        </div>
+        <div id="hint-display"></div>
+    </div>
+</div>
+
+<audio id="success-sound"
+       src="{{ url_for('static', filename='audio/game-audio.mp3') }}"
+       preload="auto"></audio>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
