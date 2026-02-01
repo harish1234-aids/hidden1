@@ -15,7 +15,29 @@ let currentLevel = 0;
 let gameData = [];
 let hintUsed = 0;
 
-const levels = [ { image:"/static/images/level 2.jpg", items: [ { riddle: "I am an animal with long neck.", name: "Giraffe", top: "5%", left: "84%", width: "12%", height: "17%", hints: ["I have spots.","I eat leaves."] }, { riddle: "I am a domestic animal.", name: "Cat", top: "20%", left: "61%", width: "8%", height: "10%", hints: ["I catch mice.", "I say meow."] }, { riddle: "I am a fruit with red colour.", name: "Strawberry", top: "88%", left: "39%", width: "8%", height: "10%", hints: ["I have tiny seeds.", "I am sweet."] }, { riddle: "I am a long yellow fruit. Monkeys love to eat me.", name: "Banana", top: "43%", left: "45%", width: "8%", height: "10%", hints: ["I am yellow.", "I can fall down people who put their legs on me."] }, { riddle: "I am hard and strong. I are inside your body and help you stand.", name: "Bone", top: "55%", left: "85%", width: "10%", height: "8%", hints: ["Every vertibrates has me.", "I am so strong."] } ] }, { image:"/static/images/screen-6.jpg", items: [ { riddle: "I am hot and bright. I give light and heat.", name: "Fire", top: "49%", left: "75%", width: "12%", height: "17%", hints: ["I can burn.","I give heat."] }, { riddle: "I help you see clearly. I sit on your nose.", name: "Spectacles", top: "41%", left: "30%", width: "8%", height: "10%", hints: ["I have two glasses.", "People wear me."] }, { riddle: "I have many pages. I help you read and learn.", name: "Book", top: "88%", left: "10%", width: "8%", height: "10%", hints: ["I have words and pictures.", "We read me."] }, { riddle: "I am soft and fluffy. Children love to hug me.", name: "Teddy", top: "82%", left: "90%", width: "8%", height: "17%", hints: ["I am a toy.", "Children hug me."] }, { riddle: "I make a loud sound and wake you up in the morning.", name: "Alarm", top: "31%", left: "85%", width: "10%", height: "8%", hints: ["I tell time.", "Used in the morning."] } ] }, { image:"/static/images/level 1.webp", items: [ { riddle: "I have vast blue body covers most of the Earth.", name: "Sea", top: "45%", left: "50%", width: "8%", height: "14%", hints: ["It touches every shore.", "Its waters rise and fall with the moon."] }, { riddle: "I holds a plant upright while it grows.", name: "Plant Pot", top: "65%", left: "90%", width: "4%", height: "6%", hints: ["It holds soil, not water.", "Roots rest inside it."] }, { riddle: "I stand silent, shaped by hands, telling stories without a voice.", name: "Sculpture", top: "48%", left: "26%", width: "5%", height: "10%", hints: ["Made of stone, wood, or metal.", "It shows a form, figure, or shape as art."] }, { riddle: "I am an animal that neighs, runs fast, and people ride me.", name: "Horse", top: "53%", left: "15%", width: "5%", height: "13%", hints: ["race with me.", "I have four legs and hooves."] }, { riddle: "I am a board used for painting pictures.", name: "Painting Board", top: "53%", left: "60%", width: "12%", height: "20%", hints: ["my partner is painting brush.", "people often paints on me."] } ] }];
+const levels = [
+    { image:"/static/images/level 2.jpg", items: [
+        { riddle: "I am an animal with long neck.", name: "Giraffe", top: "5%", left: "84%", width: "12%", height: "17%", hints: ["I have spots.","I eat leaves."] },
+        { riddle: "I am a domestic animal.", name: "Cat", top: "20%", left: "61%", width: "8%", height: "10%", hints: ["I catch mice.", "I say meow."] },
+        { riddle: "I am a fruit with red colour.", name: "Strawberry", top: "88%", left: "39%", width: "8%", height: "10%", hints: ["I have tiny seeds.", "I am sweet."] },
+        { riddle: "I am a long yellow fruit. Monkeys love to eat me.", name: "Banana", top: "43%", left: "45%", width: "8%", height: "10%", hints: ["I am yellow.", "I can fall down people who put their legs on me."] },
+        { riddle: "I am hard and strong. I are inside your body and help you stand.", name: "Bone", top: "55%", left: "85%", width: "10%", height: "8%", hints: ["Every vertibrates has me.", "I am so strong."] }
+    ] },
+    { image:"/static/images/screen-6.jpg", items: [
+        { riddle: "I am hot and bright. I give light and heat.", name: "Fire", top: "49%", left: "75%", width: "12%", height: "17%", hints: ["I can burn.","I give heat."] },
+        { riddle: "I help you see clearly. I sit on your nose.", name: "Spectacles", top: "41%", left: "30%", width: "8%", height: "10%", hints: ["I have two glasses.", "People wear me."] },
+        { riddle: "I have many pages. I help you read and learn.", name: "Book", top: "88%", left: "10%", width: "8%", height: "10%", hints: ["I have words and pictures.", "We read me."] },
+        { riddle: "I am soft and fluffy. Children love to hug me.", name: "Teddy", top: "82%", left: "90%", width: "8%", height: "17%", hints: ["I am a toy.", "Children hug me."] },
+        { riddle: "I make a loud sound and wake you up in the morning.", name: "Alarm", top: "31%", left: "85%", width: "10%", height: "8%", hints: ["I tell time.", "Used in the morning."] }
+    ] },
+    { image:"/static/images/level 1.webp", items: [
+        { riddle: "I have vast blue body covers most of the Earth.", name: "Sea", top: "45%", left: "50%", width: "8%", height: "14%", hints: ["It touches every shore.", "Its waters rise and fall with the moon."] },
+        { riddle: "I holds a plant upright while it grows.", name: "Plant Pot", top: "65%", left: "90%", width: "4%", height: "6%", hints: ["It holds soil, not water.", "Roots rest inside it."] },
+        { riddle: "I stand silent, shaped by hands, telling stories without a voice.", name: "Sculpture", top: "48%", left: "26%", width: "5%", height: "10%", hints: ["Made of stone, wood, or metal.", "It shows a form, figure, or shape as art."] },
+        { riddle: "I am an animal that neighs, runs fast, and people ride me.", name: "Horse", top: "53%", left: "15%", width: "5%", height: "13%", hints: ["race with me.", "I have four legs and hooves."] },
+        { riddle: "I am a board used for painting pictures.", name: "Painting Board", top: "53%", left: "60%", width: "12%", height: "20%", hints: ["my partner is painting brush.", "people often paints on me."] }
+    ] }
+];
 
 function initLevel() {
     hintUsed = 0;
@@ -48,6 +70,13 @@ function startGame() {
 
     currentItem = gameData[Math.floor(Math.random() * gameData.length)];
     questionEl.innerText = `Question: ${currentItem.riddle}`;
+
+    // Reset hints for new item
+    hintUsed = 0;
+    hintDisplay.innerHTML = '';
+    hint1Btn.disabled = false;
+    hint2Btn.disabled = true;
+
     renderHotspot();
 }
 
