@@ -71,7 +71,6 @@ function startGame() {
     currentItem = gameData[Math.floor(Math.random() * gameData.length)];
     questionEl.innerText = `Question: ${currentItem.riddle}`;
 
-    // Reset hints for new item
     hintUsed = 0;
     hintDisplay.innerHTML = '';
     hint1Btn.disabled = false;
